@@ -2,8 +2,8 @@
 #
 # Allow SSH connection to the container
 
-MAINTAINER Guillaume Salva <guillaume@holbertonschool.com>
 FROM ubuntu:14.04
+MAINTAINER Guillaume Salva <guillaume@holbertonschool.com>
 
 RUN apt-get update
 RUN apt-get -y upgrade
