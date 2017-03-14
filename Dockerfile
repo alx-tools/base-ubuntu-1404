@@ -1,3 +1,8 @@
+# Base container for Holberton School
+#
+# Allow SSH connection to the container
+
+MAINTAINER Guillaume Salva <guillaume@holbertonschool.com>
 FROM ubuntu:14.04
 
 RUN apt-get update
@@ -16,4 +21,4 @@ RUN sed -ri 's/^#PasswordAuthentication/PasswordAuthentication/' /etc/ssh/sshd_c
 RUN sed -ri 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-CMD    ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
