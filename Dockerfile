@@ -8,9 +8,7 @@ MAINTAINER Guillaume Salva <guillaume@holbertonschool.com>
 RUN apt-get update
 RUN apt-get -y upgrade
 
-# Install Vim and Emacs
-RUN apt-get install -y vim
-RUN apt-get install -y emacs
+RUN apt-get install -y curl wget git vim emacs
 
 # SSH
 RUN apt-get install -y openssh-server
@@ -21,4 +19,5 @@ RUN sed -ri 's/^#PasswordAuthentication/PasswordAuthentication/' /etc/ssh/sshd_c
 RUN sed -ri 's/^PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
-CMD ["/usr/sbin/sshd", "-D"]
+# start run!
+CMD ["./tmp/run.sh"]
