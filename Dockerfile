@@ -13,7 +13,6 @@ RUN apt-get update \
         openssh-server \
         build-essential software-properties-common gcc-4.8 \
         man manpages-dev manpages-posix-dev \
-    && unminimize \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir /var/run/sshd \
     && sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
